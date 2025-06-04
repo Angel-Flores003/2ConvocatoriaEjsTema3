@@ -14,5 +14,9 @@ namespace EjsTema3.Ej18
         {
             Console.WriteLine($"El vehicle es transoprta amb 'ElectricBike'\n Brand: {Brand}, Battery Capacity: {BatteryCapacity}, Autonomy: {Autonomy}");
         }
+        public override string ToString()
+        {
+            return $"ElectricBike: {Brand}, Battery Capacity: {BatteryCapacity}, Autonomy: {Autonomy}";
+        }
     }
 }

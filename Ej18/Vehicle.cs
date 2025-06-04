@@ -17,5 +17,9 @@ namespace EjsTema3.Ej18
             BatteryCapacity = batteryCapacity;
             Autonomy = autonomy;
         }
+        public override string ToString()
+        {
+            return $"Vehicle: {Brand}, Battery Capacity: {BatteryCapacity}, Autonomy: {Autonomy}";
+        }
     }
 }
