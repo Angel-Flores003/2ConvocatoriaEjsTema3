@@ -15,6 +15,11 @@ namespace EjsTema3
             Nom = nom;            
             Edat = edat;
         }
+        public Persona()
+        {
+            Nom = "Paco";
+            Edat = 20;
+        }
         public override string ToString()
         {
             return $"{Nom}, Edad: {Edat}";
