@@ -30,16 +30,18 @@ namespace EjsTema3
             //dividim la lògica de creació de vehicles en funció del tipus
             if (type == "cotxe")
             {
-                vehicle = new ElectricCar(brand, batteryCapacity.ToString(), autonomy.ToString());                
+                vehicle = new ElectricCar(brand, batteryCapacity, autonomy);
+                Console.WriteLine("Vehicle guardat");
             }
             else if (type == "bici")
             {
-                vehicle = new ElectricBike(brand, batteryCapacity.ToString(), autonomy.ToString());
+                vehicle = new ElectricBike(brand, batteryCapacity, autonomy);
+                Console.WriteLine("Vehicle guardat");
             }
             else
             {
-                Console.WriteLine("Tipus de vehicle no vàlid. S'està creant un vehicle genèric.");
-                vehicle = new Vehicle(brand, batteryCapacity.ToString(), autonomy.ToString());
+                Console.WriteLine("Tipus de vehicle no vàlid. S'està creant un vehicle per defecte.");
+                vehicle = new ElectricBike("DefaultBrand", 1.0, 50); // Creació d'un vehicle per defecte
             }
         }
     }

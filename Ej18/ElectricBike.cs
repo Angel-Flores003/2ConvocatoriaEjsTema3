@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace EjsTema3.Ej18
 {
-    public class ElectricBike : Vehicle
+    public class ElectricBike : Vehicle, ITransportable
     {
-        public ElectricBike(string brand, string batteryCapacity, string autonomy) : base(brand, batteryCapacity, autonomy) { }
+        public ElectricBike(string brand, double batteryCapacity, double autonomy) : base(brand, batteryCapacity, autonomy) { }
 
         public void TransportMode()
         {
