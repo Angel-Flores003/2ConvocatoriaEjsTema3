@@ -4,9 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Persona persona1 = new Persona("Joan", 30);
-            persona1.ToString();
-            Console.WriteLine(persona1);
+            Gos gos = new Gos("Rex");
+            gos.So();
+            Gat gat = new Gat("Mittens");
+            gat.So();
         }
     }
 }
