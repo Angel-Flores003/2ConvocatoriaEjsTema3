@@ -1,4 +1,5 @@
 using EjsTema3.Ej18;
+using System.Runtime.CompilerServices;
 
 namespace EjsTema3
 {
@@ -6,42 +7,76 @@ namespace EjsTema3
     {
         static void Main(string[] args)
         {
-            string type, brand;
-            double batteryCapacity, autonomy;
-            Vehicle vehicle;
+            int opcio;
 
-            Console.WriteLine("Introdueïx el tipus de vehicle (cotxe/bici)");
+            do
+            {
+                Console.WriteLine("\n MENÚ DE VEHICLES ELÈCTRICS");
+                Console.WriteLine("1. Afegir vehicle");
+                Console.WriteLine("2. Llistar vehicles");
+                Console.WriteLine("3. Sortir");
+                Console.Write("Escull una opció: ");
+
+                if (!int.TryParse(Console.ReadLine(), out opcio)) opcio = 0;
+
+                switch (opcio)
+                {
+                    case 1:
+                        AfegirVehicle();
+                        break;
+                    case 2:
+                        LlistarVehicles();
+                        break;
+                    case 3:
+                        Console.WriteLine("Dew");
+                        break;
+                    default:
+                        Console.WriteLine("Opció no vàlida.");
+                        break;
+                }
+
+            } while (opcio != 3);
+        }
+
+        static void AfegirVehicle()
+        {
+            string type, brand;
+            double bateria, autonomia;
+
+            Console.Write("Tipus de vehicle (cotxe/bici): ");
             type = Console.ReadLine().ToLower();
 
-            Console.WriteLine("Introdueïx la marca del vehicle");
+            Console.Write("Marca: ");
             brand = Console.ReadLine();
 
-            Console.WriteLine("Introdueïx la capacitat de la bateria (en kWh)");
-            while (!double.TryParse(Console.ReadLine(), out batteryCapacity) || batteryCapacity <= 0)
-            {
-                Console.WriteLine("Capacitat de bateria no vàlida. Introdueix un valor positiu.");
-            }
+            Console.Write("Bateria (kWh): ");
+            bateria = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Introdueïx l'autonomia del vehicle (en km)");
-            while (!double.TryParse(Console.ReadLine(), out autonomy) || autonomy <= 0)
-            {
-                Console.WriteLine("Autonomia no vàlida. Introdueix un valor positiu.");
-            }
-            //dividim la lògica de creació de vehicles en funció del tipus
+            Console.Write("Autonomia (km): ");
+            autonomia = Convert.ToDouble(Console.ReadLine());
+
             if (type == "cotxe")
             {
-                vehicle = new ElectricCar(brand, batteryCapacity, autonomy);
-                Console.WriteLine("Vehicle guardat");
+                ElectricCar car = new ElectricCar(brand, bateria, autonomia);
+                Console.WriteLine($"Cotxe afegit: {car}");
             }
             else if (type == "bici")
             {
-                vehicle = new ElectricBike(brand, batteryCapacity, autonomy);
-                Console.WriteLine("Vehicle guardat");
+                ElectricBike bike = new ElectricBike(brand, bateria, autonomia);
+                Console.WriteLine($"Bicicleta afegida: {bike}");
             }
             else
             {
-                Console.WriteLine("Tipus de vehicle no vàlid. S'està creant un vehicle per defecte.");
-                vehicle = new ElectricBike("DefaultBrand", 1.0, 50); // Creació d'un vehicle per defecte
+                Console.WriteLine("Tipus de vehicle no vàlid.");
+            }
+        }
+
+        static void LlistarVehicles()
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                ElectricBike bike = ElectricBike.CreateDefaultBike();
+                Console.WriteLine(bike);
             }
         }
     }
