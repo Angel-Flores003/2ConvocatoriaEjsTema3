@@ -8,11 +8,38 @@ namespace EjsTema3
 {
     public class Persona
     {
-        public string Nom { get; set; }        
-        public int Edat { get; set; }
+        private string nom;
+        public string Nom
+        {
+            get { return nom; }
+            set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    Console.WriteLine("El nom no pot estar buit");
+                }
+                else
+                {
+                    nom = value;
+                }
+            }
+        }
+        private int edat;
+        public int Edat
+        {
+            get { return edat; }
+            set
+            {
+                if (value < 0)
+                {
+                    Console.WriteLine("L'edat no pot ser negativa");
+                }
+                edat = value;
+            }
+        }
         public Persona(string nom, int edat)
         {
-            Nom = nom;            
+            Nom = nom;
             Edat = edat;
         }
         public Persona()
@@ -22,7 +49,7 @@ namespace EjsTema3
         }
         public override string ToString()
         {
-            return $"{Nom}, Edad: {Edat}";
+            return $"Nom: {Nom}, Edad: {Edat}";
         }
         public void Saluda()
         {
