@@ -55,5 +55,30 @@ namespace EjsTema3
         {
             Console.WriteLine($"Hola, soc {Nom}");
         }
+        public void Saluda(string idioma)
+        {
+            if (!string.IsNullOrWhiteSpace(idioma))
+            {
+                switch (idioma.ToLower())
+                {
+                    case "ca":
+                        Console.WriteLine($"Hola, sóc {Nom}");
+                        break;
+                    case "es":
+                        Console.WriteLine($"Hola, soy {Nom}");
+                        break;
+                    case "en":
+                        Console.WriteLine($"Hello, I am {Nom}");
+                        break;
+                    default:
+                        Console.WriteLine($"Hola, soc {Nom}");
+                        break;
+                }
+            }
+            else
+            {
+                Saluda();
+            }            
+        }
     }
 }
