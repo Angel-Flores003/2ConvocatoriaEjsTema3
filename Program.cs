@@ -4,8 +4,10 @@
     {
         static void Main(string[] args)
         {
-            Persona p1 = new Persona("Joan", 30);
-            p1.Saluda();
+            Persona person1 = new Persona("Joan", 30);
+            Persona person2 = new Persona();
+            person1.Saluda();
+            person2.Saluda();
         }
     }
 }
