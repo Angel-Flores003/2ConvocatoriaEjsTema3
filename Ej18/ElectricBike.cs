@@ -18,5 +18,9 @@ namespace EjsTema3.Ej18
         {
             return $"ElectricBike: {Brand}, Battery Capacity: {BatteryCapacity}, Autonomy: {Autonomy}";
         }
+        public static ElectricBike CreateDefaultBike()
+        {
+            return new ElectricBike("DefaultBrand", 1.0, 50);
+        }
     }
 }

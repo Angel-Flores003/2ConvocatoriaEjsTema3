@@ -1,4 +1,4 @@
-﻿using EjsTema3.Ej18;
+using EjsTema3.Ej18;
 
 namespace EjsTema3
 {
