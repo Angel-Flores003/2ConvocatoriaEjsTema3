@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Estudiant person1 = new Estudiant("Joan", 16, "2n Batxillerat");
-            person1.Estudiar();
+            Persona person1 = new Persona("Joan", -16);
+            person1.Saluda();            
         }
     }
 }
