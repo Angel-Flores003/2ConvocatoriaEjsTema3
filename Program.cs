@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            Veterinari veterinari = new Veterinari();
-            veterinari.Alimentar();
+            Persona persona = new Persona("Joan", -30);
+            persona.Saluda();
         }
     }
 }

@@ -33,6 +33,7 @@ namespace EjsTema3
                 if (value < 0)
                 {
                     Console.WriteLine("L'edat no pot ser negativa");
+                    throw new ArgumentOutOfRangeException(nameof(value), "L'edat no pot ser negativa");                    
                 }
                 edat = value;
             }
