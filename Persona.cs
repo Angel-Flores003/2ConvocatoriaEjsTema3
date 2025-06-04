@@ -49,7 +49,7 @@ namespace EjsTema3
         }
         public override string ToString()
         {
-            return $"Nom: {Nom}, Edad: {Edat}";
+            return $"Persona: {Nom}, Edad: {Edat}";
         }
         public void Saluda()
         {
